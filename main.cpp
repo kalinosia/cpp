@@ -5,7 +5,7 @@
 
 using namespace std;
 
-//void login_pssword();
+//void login_pssword(); // not here a lot of headers but in other file
 
 string ask() { //not void ! 
 	string name;
@@ -20,14 +20,17 @@ void yourName(string name) {
 		cout << name[i] << endl;
 	}
 }
-
+///////////////////////////////////////////////////////////////MAIN
 int main() {
-	login_pssword();
 
 	string user = ask();
 	yourName(user);
 	cout << "function sizeof: " << sizeof(user) << " function .size(): " << user.size() << endl;
-	/*
+	
+	
+	/* 
+	//COUT CIN FLUSH SETPRECISION() FLOAT FIXED SCIENTIFIC INT <->CHAR
+	
 	std::cout << "Hello world!" << std::endl;
 	std::cout << "Hello world second!" << flush;
 	std::cout << "Hello world third!";
@@ -57,9 +60,10 @@ int main() {
 		<< "int char = '7' :  " << int(cChar) << endl << "wchar_t = 7 : " << wcValue << endl;
 
 	cout << "size od char= " << sizeof(char) << " size of wchar= " << sizeof(wchar_t) << endl;
-
-	
-
+	*/
+	////////////////////////////////////////////////////////////////////////////////////////////
+	/*
+	//sizeof, loops
 	char tekst[] = "hello";
 
 	for (int i = 0; i < sizeof(tekst); i++) {
@@ -108,12 +112,14 @@ int main() {
 	cout << num;
 	*/
 
-	//login_pssword;
+	//login_pssword;    //<------------
 	std::cin.get();
 
 	return 0;
 
 }
+
+//function 
 void login_pssword() {
 	string login = "Jack";
 	const string password = "hello";
