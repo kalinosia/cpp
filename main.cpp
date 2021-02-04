@@ -1,9 +1,33 @@
 #include<iostream>
 #include <iomanip> //setprecision()
+
+#include "headers.h"
+
 using namespace std;
 
-int main() {
+//void login_pssword();
 
+string ask() { //not void ! 
+	string name;
+	cout << "Your name is : " << flush;
+	cin >> name;
+	//co_return name;
+	return name;
+}
+void yourName(string name) {
+	cout << "Your name is " << endl;
+	for (int i = 0; i < name.size(); i++) {
+		cout << name[i] << endl;
+	}
+}
+
+int main() {
+	login_pssword();
+
+	string user = ask();
+	yourName(user);
+	cout << "function sizeof: " << sizeof(user) << " function .size(): " << user.size() << endl;
+	/*
 	std::cout << "Hello world!" << std::endl;
 	std::cout << "Hello world second!" << flush;
 	std::cout << "Hello world third!";
@@ -34,6 +58,63 @@ int main() {
 
 	cout << "size od char= " << sizeof(char) << " size of wchar= " << sizeof(wchar_t) << endl;
 
+	
+
+	char tekst[] = "hello";
+
+	for (int i = 0; i < sizeof(tekst); i++) {
+		cout << int(tekst[i]) << "\t"; //last will be tekst[i]==0
+	}
+
+	for (int i = 0; i < 9; i++) {
+		cout << i << endl;
+		if (i == 3) {
+			break; //continue np. if input==password break
+			cout << "break" << endl;
+		}
+		cout << "Go go " << i << endl;
+	}
+
+	// JE¯ELI JAKIEJŒ DANEJ NIE MA S¥ LOSOWE DANE!!! np.1643527896
+	int values[3] = { 2, 3, 1 };
+	double numbers[4];
+	cout << numbers[2] << endl;
+	int zeros[3] = {};//better
+	cout << zeros[1] << endl;
+
+	string fruits[] = { "apple", "banana", "pinapple","mango" };
+	*/
+
+
+	//TABLE - two dimention array
+	string table[2][3] = {
+		{"glass", "plate", "fork" },
+		{"pad", "flowers", "cookies"}
+	};
+	cout << sizeof(table)<<endl;
+	cout << sizeof(string) << endl;
+	cout << sizeof(table) / sizeof(string) << " czy równa siê 2x3=6?" << endl;
+
+	//cout << table[1][4]; //CA£KIEM WYKRZACZY£O KONSOLÊ WIÊC JAK SPRAWDZIÆ KIEDY KONIEC RZÊDU?
+	cout << "size y: " << sizeof(table[0]) / sizeof(string) << "size of x: " << sizeof(table) / sizeof(table[0]) << endl;;
+	
+	
+	/*
+	char name[2];
+	cin.get(name, 2);
+
+	cout << "'"<< name << "'"<< endl;
+	int num = int(name[0]) - 48;
+	cout << num;
+	*/
+
+	//login_pssword;
+	std::cin.get();
+
+	return 0;
+
+}
+void login_pssword() {
 	string login = "Jack";
 	const string password = "hello";
 	string input_login;
@@ -78,41 +159,4 @@ int main() {
 			cout << "Incorrect choise" << endl;
 		}
 	}
-
-	char tekst[] = "hello";
-
-	for (int i = 0; i < sizeof(tekst); i++) {
-		cout << int(tekst[i]) << "\t"; //last will be tekst[i]==0
-	}
-
-	for (int i = 0; i < 9; i++) {
-		cout << i << endl;
-		if (i == 3) {
-			break; //continue np. if input==password break
-			cout << "break" << endl;
-		}
-		cout << "Go go " << i << endl;
-	}
-
-	// JE¯ELI JAKIEJŒ DANEJ NIE MA S¥ LOSOWE DANE!!! np.1643527896
-	int values[3] = { 2, 3, 1 };
-	double numbers[4];
-	cout << numbers[2] << endl;
-	int zeros[3] = {};//better
-	cout << zeros[1] << endl;
-
-	string fruits[] = { "apple", "banana", "pinapple","mango" };
-
-	/*
-	char name[2];
-	cin.get(name, 2);
-
-	cout << "'"<< name << "'"<< endl;
-	int num = int(name[0]) - 48;
-	cout << num;
-	*/
-	std::cin.get();
-
-	return 0;
-
 }
