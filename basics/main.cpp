@@ -79,7 +79,7 @@ int main() {
 		cout << "Go go " << i << endl;
 	}
 
-	// JE¯ELI JAKIEJŒ DANEJ NIE MA S¥ LOSOWE DANE!!! np.1643527896
+	// JEÂ¯ELI JAKIEJÅ’ DANEJ NIE MA SÂ¥ LOSOWE DANE!!! np.1643527896
 	int values[3] = { 2, 3, 1 };
 	double numbers[4];
 	cout << numbers[2] << endl;
@@ -97,9 +97,9 @@ int main() {
 	};
 	cout << sizeof(table)<<endl;
 	cout << sizeof(string) << endl;
-	cout << sizeof(table) / sizeof(string) << " czy równa siê 2x3=6?" << endl;
+	cout << sizeof(table) / sizeof(string) << " czy rÃ³wna siÃª 2x3=6?" << endl;
 
-	//cout << table[1][4]; //CA£KIEM WYKRZACZY£O KONSOLÊ WIÊC JAK SPRAWDZIÆ KIEDY KONIEC RZÊDU?
+	//cout << table[1][4]; //CAÂ£KIEM WYKRZACZYÂ£O KONSOLÃŠ WIÃŠC JAK SPRAWDZIÃ† KIEDY KONIEC RZÃŠDU?
 	cout << "size y: " << sizeof(table[0]) / sizeof(string) << "size of x: " << sizeof(table) / sizeof(table[0]) << endl;;
 	
 	
