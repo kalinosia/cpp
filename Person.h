@@ -18,8 +18,15 @@ private:
 
 public:
 	Person();
+	//LUB TUTAJ MO¯EMY INICJOWAÆ 
+	//Person::Person(): name("unnamed), age(0){};
+	///!!!!!
+	///tak samo z drugim
+
 	Person(string newName) { name = newName; age = 0; }//
-	Person(string newNAme, int newAge);//
+	//#3 Person(string newName, int newAge);//
+	Person(string name, int age); //#3
+
 	string toString();
 	//void setName(string newName);
 	//string getName();

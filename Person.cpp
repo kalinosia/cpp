@@ -11,16 +11,23 @@
 
 Person::Person() {
 	name = "George";
-
+	age = 0;
 }
 
-/// ////////////////////
+/// 
+/*Usuñ t¹ linikê, usuñ #3
 Person::Person(string newName, int newAge) {
 	name = newName;
 	age = newAge;
 }
-/// ///////////
-
+/// *///////////
+///#3 SAME UP 
+Person::Person(string name, int age) {
+	this->name = name;
+	this->age = age;
+	cout << "Memory location: " << this << endl;
+}
+/// #3
 /*
 string Person::toString() {
 	return "Person's name is: " + name;

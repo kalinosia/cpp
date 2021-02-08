@@ -38,6 +38,6 @@ int main() {
 	cout << person2.toString() << endl;
 	cout << person3.toString() << endl;
 
-
+	cout << "memory alocation per2, per3: " << &person2 <<" ; "<<&person3 << endl;
 	return 0;
 }
