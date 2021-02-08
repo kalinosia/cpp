@@ -27,10 +27,17 @@ int main() {
 
 
 	Person person;
-	person.setName("Georgina");
+	//person.setName("Georgina");
 	cout << person.toString() << endl;
 
-	cout << "Name of person with get method: " << person.getName() << endl;
+	//cout << "Name of person with get method: " << person.getName() << endl;
+
+	Person person2("Bob");
+	Person person3("Sue", 35);
+
+	cout << person2.toString() << endl;
+	cout << person3.toString() << endl;
+
 
 	return 0;
 }

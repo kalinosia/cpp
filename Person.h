@@ -14,11 +14,14 @@ using namespace std;
 class Person {
 private:
 	string name;
+	int age;
 
 public:
 	Person();
+	Person(string newName) { name = newName; age = 0; }//
+	Person(string newNAme, int newAge);//
 	string toString();
-	void setName(string newName);
-	string getName();
+	//void setName(string newName);
+	//string getName();
 };
 
