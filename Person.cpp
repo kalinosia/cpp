@@ -29,6 +29,23 @@ Person::Person(string name, int age) {
 }
 /// #3
 /*
+* LUB WOGÓLE MO¯NA TO ROZWI¥ZAÆ TAK!
+Person::Person(string name, int age): name(name), age(age){
+}
+LUB
+Person::Person(): name("unnamed), age(0){
+}
+!!!!!!
+*/
+
+
+
+
+
+
+
+
+/*
 string Person::toString() {
 	return "Person's name is: " + name;
 }
