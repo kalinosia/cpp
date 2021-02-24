@@ -15,7 +15,7 @@ Person::Person() {
 }
 
 /// 
-/*Usuñ t¹ linikê, usuñ #3
+/*UsuÃ± tÂ¹ linikÃª, usuÃ± #3
 Person::Person(string newName, int newAge) {
 	name = newName;
 	age = newAge;
@@ -29,7 +29,7 @@ Person::Person(string name, int age) {
 }
 /// #3
 /*
-* LUB WOGÓLE MO¯NA TO ROZWI¥ZAÆ TAK!
+* LUB WOGÃ“LE MOÂ¯NA TO ROZWIÂ¥ZAÃ† TAK!
 Person::Person(string name, int age): name(name), age(age){
 }
 LUB
