@@ -18,7 +18,7 @@ private:
 
 public:
 	Person();
-	//LUB TUTAJ MO¯EMY INICJOWAÆ 
+	//LUB TUTAJ MOÂ¯EMY INICJOWAÃ† 
 	//Person::Person(): name("unnamed), age(0){};
 	///!!!!!
 	///tak samo z drugim
