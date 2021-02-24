@@ -8,7 +8,7 @@ Cat::Cat() {
 	cout << "Cat created." << endl;
 	//happy=true;
 }
-Cat::~Cat() {//NA KONIEC PROGRAMU PEWNIE ZWALNIANIE PAMIÊCI
+Cat::~Cat() {//NA KONIEC PROGRAMU PEWNIE ZWALNIANIE PAMIÄ˜CI
 	cout << "destroy cat" << endl;
 }
 
