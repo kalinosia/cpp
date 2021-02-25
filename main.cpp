@@ -1,85 +1,44 @@
 #include <iostream>
 #include <SDL.h>
-
+#include "Screen.h"
+#include <math.h>
 
 // You shouldn't really use this statement, but it's fine for small programs
 using namespace std;
-
+using namespace domi;
 // You must include the command line parameters for your main function to be recognized by SDL
 int main(int argc, char** args) {
 
-	const int SCREEN_WIDTH = 800;
-	const int SCREEN_HEIGHT = 600;
-
-	// Initialize SDL. SDL_Init will return -1 if it fails.
-	if (SDL_Init(SDL_INIT_VIDEO) < 0) {
-		cout << "SDL init failed." << endl;
-		// End the program
-		return 1;
+	Screen screen;
+	if (screen.init() == false) {
+		cout << "Error initialising SDL." << endl;
 	}
-
-	SDL_Window *window = SDL_CreateWindow("Particle Fire Explosion",
-		SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-		SCREEN_WIDTH, SCREEN_HEIGHT, 
-		SDL_WINDOW_SHOWN);
-
-	if (window == NULL) {
-		SDL_Quit();
-		return 2;
-	}
-
-	SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_PRESENTVSYNC);
-	SDL_Texture* texture = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_ABGR8888,
-		SDL_TEXTUREACCESS_STATIC, SCREEN_WIDTH, SCREEN_HEIGHT);
-	if (renderer == NULL) {
-		SDL_DestroyWindow(window);
-		SDL_Quit();
-		return 3;
-	}
-	if (texture == NULL) {
-		SDL_DestroyWindow(window);
-		SDL_DestroyRenderer(renderer);
-		SDL_Quit();
-		return 4;
-	}
-
-	Uint32* buffer = new Uint32[SCREEN_WIDTH * SCREEN_HEIGHT]; // check if memory, if not null....
-
-	memset(buffer, 0 , SCREEN_WIDTH * SCREEN_HEIGHT * sizeof(Uint32));//second = color = 25 or 0x66 or 0xFF
-
-	for (int i = 0; i < SCREEN_WIDTH * SCREEN_HEIGHT; i++) {
-		buffer[i] = 0x00FF00FF; //R G B Opacity
-	}
-	//buffer[3000] = 0xFFFAAA;
-
-
-	SDL_UpdateTexture(texture, NULL, buffer, SCREEN_WIDTH * sizeof(Uint32));
-	SDL_RenderClear(renderer);
-	SDL_RenderCopy(renderer, texture, NULL, NULL);
-	SDL_RenderPresent(renderer);
-
 	bool quit = false;
 
-	SDL_Event event;
-
+	
+	
 	while (!quit) {
-		//Update
-		//Draw
-		// Checking
+		if (screen.processEvent() == false){
+			break;
+		}
 
-		while (SDL_PollEvent(&event)) {
-			if (event.type == SDL_QUIT) {
-				quit = true;
+
+		int elapsed=SDL_GetTicks();
+		unsigned char green=(unsigned char)((1+sin(elapsed*0.0001))*128); //[was int to check-cout], 1+ to not have -1, 0.001 to slow, 128 to have almost 255
+		unsigned char red = (unsigned char)((1 + sin(elapsed * 0.0002)) * 128);//play with speed = 0.0002 ...
+		unsigned char blue = (unsigned char)((1 + cos(elapsed * 0.0003)) * 128);//play with cos and sin
+	
+		for (int y = 0; y < Screen::SCREEN_HEIGHT; y++) {
+			for (int x = 0; x < Screen::SCREEN_WIDTH; x++) {
+				screen.setPixel(x, y, red,green,blue); //red pink yellow
 			}
 		}
+		screen.setPixel(400, 300, 255, 0, 0);
+		screen.update();
+		
 	}
-
-	delete [] buffer;
-	SDL_DestroyRenderer(renderer);
-	SDL_DestroyTexture(texture);
-	SDL_DestroyWindow(window);
-	// Quit SDL
-	SDL_Quit();
+	
+	screen.close();
 
 	// End the program
 	return 0;
