@@ -6,7 +6,7 @@ namespace domi {
 
 Screen::Screen() :
 	m_window(NULL), m_renderer(NULL), m_texture(NULL), m_buffer1(NULL), m_buffer2(NULL) {
-	//m_buffer = new Uint32[SCREEN_WIDTH * SCREEN_HEIGHT]; // check if memory, if not null....
+//??
 }
 //-----------------------------------------------------------------------INIT
 bool Screen::init() {
@@ -73,7 +73,7 @@ void Screen::boxBlur(){
 	Uint32* temp = m_buffer1;
 	m_buffer1 = m_buffer2;
 	m_buffer2 = temp;
-	//delete[] temp;
+	//delete[] temp; ???????????????????????????????????
 
 	for (int y = 0; y < SCREEN_HEIGHT; y++) {
 		for (int x = 0; x < SCREEN_WIDTH; x++) {
@@ -114,6 +114,7 @@ void Screen::boxBlur(){
 
 		}
 	}
+	
 }
 //------------------------------------------------------------------------------PIXELS
 void Screen::setPixel(int x, int y, Uint8 red, Uint8 green, Uint8 blue) {
