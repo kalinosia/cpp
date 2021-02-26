@@ -75,6 +75,11 @@ void Screen::setPixel(int x, int y, Uint8 red, Uint8 green, Uint8 blue) {
 	color <<= 8;
 	color += 0xFF;
 	*/
+
+	if (x < 0 || x >= SCREEN_WIDTH || y < 0 || y >= SCREEN_HEIGHT) {
+		return;
+	}
+
 	color += 0xFF;
 	color <<= 8;
 	color += blue;
