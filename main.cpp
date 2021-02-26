@@ -28,7 +28,7 @@ int main(int argc, char** args) {
 			break;
 		}
 
-	
+		screen.clear();
 		
 		int elapsed=SDL_GetTicks();
 		unsigned char green=(unsigned char)((1+sin(elapsed*0.0001))*128); //[was int to check-cout], 1+ to not have -1, 0.001 to slow, 128 to have almost 255
@@ -41,6 +41,7 @@ int main(int argc, char** args) {
 			}
 		}
 		*/
+		swarm.update();
 
 		const Particle* const pParticles = swarm.getParticles();
 		for (int i = 0; i < Swarm::NPARTICLES; i++) {
@@ -51,7 +52,7 @@ int main(int argc, char** args) {
 
 			screen.setPixel(x, y, red, green, blue);
 		}
-
+		
 		//screen.setPixel(400, 300, 255, 0, 0);
 		screen.update();
 		
